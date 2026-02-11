@@ -23,7 +23,7 @@ You need an  account with these permissions:
 - IAM: Create policies, create agencies, attach policies
 - FunctionGraph: Create and configure functions
 
-# Required Information
+# Required IAM Agency & Policy
 
  Step 1: Create IAM Policy
 
