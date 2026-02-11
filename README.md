@@ -22,7 +22,7 @@ Switch to JSON tab
 Enter this content:
 
 Policy Name: IDP-Key-Rotation-Policy
-
+```json
 {
   "Version": "1.1",
   "Statement": [
@@ -40,7 +40,7 @@ Policy Name: IDP-Key-Rotation-Policy
     }
   ]
 }
-
+```
 Save Policy
 
  Step 2: Create Agency
@@ -272,3 +272,7 @@ After creation, click on the function name to open settings.
 | Schedule Type | Cron |
 | Cron Expression | `0 0 0 * * ?` |
 | Additional Information | `{"action": "rotate"}` |
+
+### 10 Check results
+
+After running, the script should have changed the config of the IDP, changing the description of affected IDPs to "Key rotated via FunctionGraph at XXX"
