@@ -179,48 +179,7 @@ Before starting, collect these values:
 2. Go To FunctionGraph - Functions - Function List - Import Function
 3. Select Downloaded zip and Import
 
-## Step 6: Create Function in Console
-
-### 6.1 Navigate to FunctionGraph
-
-1. Log in to Console: https://console.otc.t-systems.com/
-2. Select region: eu-de
-3. Go to: Service List → Compute → FunctionGraph
-4. Click Functions in the left menu
-
-### 6.2 Create New Function
-
-1. Click Create Function
-2. Fill in the form:
-
-| Field | Value |
-|-------|-------|
-| Function Name | `idp-key-rotation` |
-| Agency | Select existing or create new with FunctionGraph permissions |
-| Runtime | Python 3.9 |
-| Handler | `index.handler` |
-| Code Entry Type | Upload ZIP |
-| Upload | Click and select your `function.zip` |
-
-3. Click Create Function
-
-## Step 7: Configure Function Settings
-
-### 7.1 Basic Settings
-
-After creation, click on the function name to open settings.
-
-1. Go to Configuration tab
-2. Set:
-
-| Setting | Value |
-|---------|-------|
-| Memory | 256 MB |
-| Timeout | 60 seconds |
-
-3. Click Save
-
-### 7.2 Environment Variables
+### 6 Environment Variables
 
 1. Go to Configuration → Environment Variables
 2. Click Add Environment Variable for each:
@@ -234,9 +193,9 @@ After creation, click on the function name to open settings.
 
 3. Click Save
 
-## Step 8: Test the Function
+## Step 7: Test the Function
 
-### 8.1 Test Authentication
+### 7.1 Test Authentication
 
 1. Go to the function page
 2. Click Test tab
@@ -259,13 +218,13 @@ After creation, click on the function name to open settings.
 }
 ```
 
-## Step 9: Create Timer Trigger (Scheduled Execution)
+## Step 8: Create Timer Trigger (Scheduled Execution)
 
 1. Go to function page → Triggers tab
 2. Click Create Trigger
 3. Select Timer
 
-### 9.1 Configure Timer
+### 8.1 Configure Timer
 
 | Field | Value |
 |-------|-------|
@@ -275,6 +234,6 @@ After creation, click on the function name to open settings.
 | Cron Expression | `0 0 0 * * ?` |
 | Additional Information | `{"action": "rotate"}` |
 
-### 10 Check results
+### 9 Check results
 
 After running, the script should have changed the config of the IDP, changing the description of affected IDPs to "Key rotated via FunctionGraph at XXX"
