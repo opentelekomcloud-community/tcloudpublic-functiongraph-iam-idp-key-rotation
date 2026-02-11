@@ -162,20 +162,11 @@ Before starting, collect these values:
 ]
 ```
 
-## Step 5: Create ZIP Package
+## Step 5: Import ZIP Package
 
-1. Select both files: `index.py` and `requirements.txt`
-2. Right-click → Send to → Compressed (zipped) folder
-3. Rename to `function.zip`
-
-**Important:** The ZIP must contain files at the root level, not in a subfolder.
-
-**Correct structure:**
-```
-function.zip
-├── index.py
-└── requirements.txt
-```
+1. Download attached idp-key-rotation_latest.zip
+2. Go To FunctionGraph - Functions - Function List - Import Function
+3. Select Downloaded zip and Import
 
 ## Step 6: Create Function in Console
 
