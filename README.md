@@ -1,6 +1,17 @@
 # tcloudpublic-functiongraph-iam-idp-key-rotation
 FunctiohGraph script to automatically rotate OIDC IdP signing keys
 
+# Background
+IAM offers Identity Providers with the Protocol OpenID Connect (OIDC). The configuration requires a Signing Key from the Service Provider (e.g., MS Entra ID). The Key is regularly changed on most Service Providers, and they publish valid keys according to OpenID Connect Discovery standard within the „jwks_uri“, where Identity Providers can fetch and update the key.
+
+# OTC Situation
+For IAM to be able to fetch the „jwks_uri“ and therefore the new valid signing keys, the backend component would need access to the internet. 
+For security reasons, backend components of T Cloud Public are forcibly isolated from the internet. 
+
+# Workaround
+The API to update the identity provider configuration and therefore the signing key can be publicly accessed. Customers can use this script to monitor changes on the signing keys of the service providers and update the identity provider configuration on T Cloud Public IAM side.
+
+____________
 
 # Manual Deployment Guide
 
