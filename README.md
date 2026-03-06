@@ -237,3 +237,26 @@ Before starting, collect these values:
 ### 9 Check results
 
 After running, the script should have changed the config of the IDP, changing the description of affected IDPs to "Key rotated via FunctionGraph at XXX"
+
+### 10 Restricting access to the function
+
+Depending on IAM strategy, you can either allow or deny access to FunctionGraph at all. If you only want to grant access to a limited set of people and also deny access to e.g. tenant admins, you can create the following IAM policy and assign to users:
+
+```json
+{
+    "Version": "1.1",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": [
+                "functiongraph:trigger:*",
+                "functiongraph:function:*"
+            ],
+            "Resource": [
+                "FUNCTIONGRAPH:::function:default/idp-key-rotation"
+                
+            ]
+        }
+    ]
+}
+```
