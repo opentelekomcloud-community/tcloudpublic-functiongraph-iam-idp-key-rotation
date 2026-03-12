@@ -179,19 +179,23 @@ Before starting, collect these values:
 2. Go To FunctionGraph - Functions - Function List - Import Function
 3. Select Downloaded zip and Import
 
-### 6 Environment Variables
+## Step 6 Environment Variables & Config
 
 1. Go to Configuration → Environment Variables
 2. Click Add Environment Variable for each:
 
 | Key | Value |
 |-----|-------|
+| `IAM_ENDPOINT` | https://iam.eu-de.otc.t-systems.com |
 | `DOMAIN_NAME` | Your domain name (from Step 1) |
 | `PROJECT_NAME` | `eu-de` |
 | `IDP_IDS` | `AzureOIDC,GoogleOIDC` (or your IDP names) |
 | `AZURE_TENANT_ID` | Your Azure tenant ID (if using Azure) |
 
 3. Click Save
+4. Go to Configuration → Permissions
+5. Assign the created Agency from the previous step
+6. Click save
 
 ## Step 7: Test the Function
 
